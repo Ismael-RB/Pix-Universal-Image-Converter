@@ -1,0 +1,12 @@
+[
+  {
+    "timestamp": "2025-07-18T14:32:19.908981",
+    "input_file": "9a51763dfd1f39ccfde340f3ea85133e.jpg",
+    "output_file": "9a51763dfd1f39ccfde340f3ea85133e.ico",
+    "input_format": "JPG",
+    "output_format": "ICO",
+    "success": true,
+    "input_size": 96953,
+    "output_size": 7872
+  }
+]

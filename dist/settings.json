@@ -1,0 +1,19 @@
+{
+  "language": "en",
+  "theme": "dark",
+  "use_threading": true,
+  "max_threads": 4,
+  "default_output_dir": "",
+  "keep_original_files": true,
+  "jpg_quality": 95,
+  "webp_quality": 90,
+  "png_compression": 6,
+  "show_preview": true,
+  "auto_resize_preview": true,
+  "show_notifications": true,
+  "minimize_to_tray": false,
+  "max_history_items": 100,
+  "auto_clear_history": false,
+  "enable_drag_drop": true,
+  "auto_detect_format": true
+}
