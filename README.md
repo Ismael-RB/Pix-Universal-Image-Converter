@@ -1,110 +1,276 @@
-# Pix - Image Converter
+# Pix - Universal Image Converter
 
-Pix is a powerful and intuitive image converter application built with Python and PyQt6. [cite\_start]It allows users to convert images between various popular formats with ease, offering both single-file and batch conversion capabilities. [cite: 1] [cite\_start]The application also includes customizable quality settings for output formats, a conversion history, and drag-and-drop functionality for a seamless user experience. [cite: 1]
+A modern and efficient cross-platform application for converting images between multiple formats with an intuitive graphical interface and professional dark theme.
 
 ## Features
 
-  * [cite\_start]**Multi-Format Support**: Convert images to and from a wide range of formats, including JPG, PNG, WEBP, BMP, TIFF, GIF, ICO, and HEIC (HEIC requires `pillow-heif`). [cite: 1]
-  * [cite\_start]**Single and Batch Conversion**: Convert individual image files or process multiple images simultaneously. [cite: 1]
-  * [cite\_start]**Customizable Quality Settings**: Adjust quality parameters for output formats like JPG, WebP, and PNG compression levels. [cite: 1]
-  * [cite\_start]**Conversion History**: Keep a record of all your past conversions for easy tracking. [cite: 1]
-  * [cite\_start]**Drag-and-Drop Interface**: Easily add files for conversion by dragging and dropping them into the application window. [cite: 1]
-  * [cite\_start]**Configurable Settings**: Customize various application settings, including language, processing mode (concurrent or sequential), default output directory, and notification preferences. [cite: 1]
-  * [cite\_start]**Dark Theme**: The application features a dark theme for a comfortable viewing experience. [cite: 1]
+- **Multi-format Support**: JPG, PNG, WebP, BMP, TIFF, GIF, ICO, HEIC
+- **Modern Interface**: Professional dark theme with intuitive design
+- **Drag & Drop**: Direct file import with visual feedback
+- **Batch Processing**: Convert multiple files simultaneously with threading support
+- **Image Preview**: Preview images before conversion
+- **Quality Control**: Advanced compression and quality settings
+- **Conversion History**: Complete log of all conversion operations
+- **Internationalization**: Support for Spanish and English
+- **Cross-platform**: Windows, Linux, and macOS compatibility
 
-## Supported Formats
+## System Requirements
 
-[cite\_start]Pix supports conversion for the following image formats: [cite: 1]
+**Minimum Requirements:**
+- Windows 7+ / Linux (modern distributions) / macOS 10.14+
+- 512 MB RAM
+- 100 MB free disk space
+- Display resolution: 1024x768 or higher
 
-  * [cite\_start]JPG (JPEG) [cite: 1]
-  * [cite\_start]PNG [cite: 1]
-  * [cite\_start]WEBP [cite: 1]
-  * [cite\_start]BMP [cite: 1]
-  * [cite\_start]TIFF (TIF) [cite: 1]
-  * [cite\_start]GIF [cite: 1]
-  * [cite\_start]ICO [cite: 1]
-  * [cite\_start]HEIC (HEIF) [cite: 1]
+**Recommended:**
+- 1 GB RAM for large batch operations
+- SSD storage for optimal performance
 
 ## Installation
 
-To run Pix, you need to have Python installed. It's recommended to use a virtual environment.
+### Option 1: Pre-compiled Executable
 
-1.  **Clone the repository**:
+$$ **Recommended for end users** $$
 
-    ```bash
-    git clone https://github.com/yourusername/pix.git
-    cd pix
-    ```
+1. Download the latest release from the releases section
+2. **Windows**: Run `Pix.exe`
+3. **Linux**: Execute `./Pix` (ensure executable permissions)
+4. **macOS**: Open `Pix.app`
 
-2.  **Create a virtual environment** (optional but recommended):
+### Option 2: Source Installation
 
-    ```bash
-    python -m venv venv
-    .\venv\Scripts\activate   # On Windows
-    source venv/bin/activate # On macOS/Linux
-    ```
+$$ **Recommended for developers or customization** $$
 
-3.  **Install dependencies**:
+**Prerequisites:**
+- Python 3.8 or higher
+- pip package manager
 
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-    (Note: A `requirements.txt` file is assumed to exist with `Pillow` and `PyQt6` listed.)
-
-## Usage
-
-To start the Pix application, run the `main.py` file:
-
+**Installation Steps:**
 ```bash
+# Clone repository
+git clone https://github.com/username/pix-converter.git
+cd pix-converter
+
+# Create virtual environment
+python -m venv venv
+
+# Activate virtual environment
+# Windows:
+venv\Scripts\activate
+# Linux/macOS:
+source venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run application
 python main.py
 ```
 
-### Converting Images
+## Building Executable
 
-1.  [cite\_start]**Select Input and Output Formats**: Choose the desired input and output image formats from the dropdown menus. [cite: 1]
-2.  [cite\_start]**Add Files**: Drag and drop your image files onto the designated area, or click the area to browse and select files. [cite: 1]
-3.  [cite\_start]**Convert**: Click the "Convert" button to start the conversion process. [cite: 1]
-4.  [cite\_start]**Output**: Converted images will be saved to the specified output directory (default is the original directory). [cite: 1]
+To create a standalone executable:
 
-### Settings
+### Windows
+```batch
+build.bat
+```
 
-Access the settings dialog by clicking the "⚙" button. [cite\_start]Here you can configure: [cite: 1]
+### Linux/macOS
+```bash
+chmod +x build.sh
+./build.sh
+```
 
-  * [cite\_start]**Language**: Change the application's language. [cite: 1]
-  * [cite\_start]**Processing Mode**: Choose between concurrent (threaded) or sequential processing for conversions. [cite: 1]
-  * [cite\_start]**Output Directory**: Set a default directory for saving converted images. [cite: 1]
-  * [cite\_start]**Quality Settings**: Adjust quality for JPG, WebP, and compression level for PNG. [cite: 1]
-  * [cite\_start]**Other Options**: Enable/disable drag-and-drop, show notifications, and choose to keep original files. [cite: 1]
+The executable will be generated in the `dist/` directory.
+
+## Usage
+
+### Basic Workflow
+
+1. **Select Input Format**: Choose the format of your source files
+2. **Select Output Format**: Choose the desired conversion format
+3. **Add Files**: 
+   - Drag files directly into the application window
+   - Click the drop zone to open file selection dialog
+4. **Configure Settings**: Access advanced options through the settings panel
+5. **Convert**: Execute the conversion process
+
+### Advanced Configuration
+
+#### General Settings
+- **Language**: Interface language selection (Spanish/English)
+- **Processing Mode**: 
+  - Concurrent: Multi-threaded processing for faster batch operations
+  - Sequential: Single-threaded processing for system resource conservation
+- **Output Directory**: Custom destination folder for converted files
+- **File Management**: Options for handling original files
+
+#### Quality Settings
+- **JPEG Quality**: Compression level control (1-100%)
+- **WebP Quality**: Compression optimization (1-100%)
+- **PNG Compression**: Compression level adjustment (0-9)
 
 ### Conversion History
 
-View a list of your past conversions by clicking the "📋" button. [cite\_start]You can also clear the history from this dialog. [cite: 1]
+The application maintains a comprehensive log of all conversion operations, including:
+- Timestamp and file information
+- Conversion success status
+- Input/output format details
+- File size information
 
-## Building an Executable
+## Supported Formats
 
-You can create a standalone executable for Pix using PyInstaller. A `build.bat` script is provided for Windows.
+| Format | Input | Output | Features |
+|--------|-------|--------|----------|
+| JPEG/JPG | ✓ | ✓ | Quality control, optimization |
+| PNG | ✓ | ✓ | Transparency support, compression levels |
+| WebP | ✓ | ✓ | Modern format, excellent compression |
+| BMP | ✓ | ✓ | Uncompressed bitmap format |
+| TIFF | ✓ | ✓ | Professional format with LZW compression |
+| GIF | ✓ | ✓ | Animation support |
+| ICO | ✓ | ✓ | Multi-size icon format |
+| HEIC | ✓ | ✓ | Apple format (requires pillow-heif) |
 
-To build the executable:
+$$ **Note**: HEIC support requires additional pillow-heif installation for full functionality $$
 
-1.  **Run the build script**:
+## Technical Architecture
 
-    ```bash
-    build.bat
-    ```
+### Core Technologies
+- **Python 3.8+**: Primary development language
+- **PyQt6**: Cross-platform GUI framework
+- **Pillow (PIL)**: Image processing library
+- **PyInstaller**: Executable packaging
 
-    [cite\_start]This script will clean previous builds, then use PyInstaller to create a single-file, windowed executable named "Pix" with the appropriate assets and hidden imports. [cite: 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+### Project Structure
+```
+pix-converter/
+├── main.py                 # Application entry point
+├── ui.py                   # User interface implementation
+├── converter.py            # Image conversion engine
+├── settings_manager.py     # Configuration management
+├── requirements.txt        # Python dependencies
+├── build.bat              # Windows build script
+├── build.sh               # Unix build script
+├── assets/                # Application resources
+│   ├── icon.png
+│   ├── configuracion.png
+│   ├── historial.png
+│   └── calidad.png
+├── settings.json          # User configuration storage
+└── conversion_history.json # Conversion history data
+```
 
-2.  **Find the executable**:
-    [cite\_start]The executable will be located in the `dist` directory. [cite: 20]
+### Key Components
 
-## Project Structure
+**ImageConverter Class**: Core conversion engine with support for:
+- Multi-threaded batch processing
+- Format-specific optimization
+- Progress tracking and error handling
+- Conversion history management
 
-  * [cite\_start]`main.py`: The entry point of the application. [cite: 3]
-  * [cite\_start]`ui.py`: Contains the PyQt6 graphical user interface (GUI) elements and logic. [cite: 2]
-  * [cite\_start]`converter.py`: Handles the core image conversion logic using the Pillow library. [cite: 1]
-  * `settings_manager.py`: (Assumed) Manages application settings and translations.
-  * [cite\_start]`assets/`: Directory for application icons and other resources. [cite: 17]
-  * [cite\_start]`conversion_history.json`: Stores the history of image conversions. [cite: 18]
-  * [cite\_start]`settings.json`: Stores user-configurable application settings. [cite: 17]
-  * [cite\_start]`build.bat`: Script for building the executable using PyInstaller (Windows). [cite: 11]
+**SettingsManager Class**: Configuration system providing:
+- Persistent settings storage
+- Quality profile management
+- Internationalization support
+- Default value handling
+
+**User Interface**: Modern Qt6-based interface featuring:
+- Responsive drag-and-drop functionality
+- Real-time preview capabilities
+- Progress indication and status reporting
+- Tabbed configuration panels
+
+## Development
+
+### Contributing
+
+Contributions are welcome. Please follow these guidelines:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/enhancement-name`)
+3. Implement changes with appropriate testing
+4. Commit with descriptive messages (`git commit -m 'Add feature: description'`)
+5. Push to branch (`git push origin feature/enhancement-name`)
+6. Submit a pull request
+
+### Development Areas
+
+$$ **High Priority**: Performance optimization, additional format support $$
+$$ **Medium Priority**: UI/UX improvements, accessibility features $$
+$$ **Low Priority**: Additional language translations, theme customization $$
+
+### Code Standards
+- Follow PEP 8 Python style guidelines
+- Include docstrings for all public methods
+- Implement proper error handling and logging
+- Maintain backward compatibility where possible
+
+## Troubleshooting
+
+### Common Issues
+
+**Application won't start:**
+- Verify Python version compatibility (3.8+)
+- Check all dependencies are installed
+- Ensure sufficient system permissions
+
+**Conversion failures:**
+- Verify input file integrity
+- Check available disk space
+- Confirm format compatibility
+
+**Performance issues:**
+- Adjust thread count in settings
+- Monitor system resource usage
+- Consider sequential processing for large files
+
+### Reporting Issues
+
+When reporting bugs, please include:
+- Detailed problem description
+- Steps to reproduce the issue
+- Operating system and version
+- Application version and installation method
+- Relevant error messages or logs
+
+## Contributors
+
+This project is developed and maintained by:
+
+- **Ismael** ([@Ismael-RB](https://github.com/Ismael-RB)) - Project Creator & Core Developer
+- **Alvaro** ([@AlvaroAR100](https://github.com/AlvaroAR100)) - Core Developer  
+- **Alan** ([@Alancius98](https://github.com/Alancius98)) - Core Developer
+
+All contributors have equal involvement in the development and decision-making process of this project.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for complete terms and conditions.
+
+## Changelog
+
+### Version 2.0
+- Complete interface redesign with modern dark theme
+- Multi-language support implementation
+- Enhanced batch processing capabilities
+- Advanced configuration system
+- Comprehensive conversion history tracking
+- Cross-platform compatibility improvements
+
+### Version 1.0
+- Initial release
+- Basic JPG to PNG conversion functionality
+- Simple user interface
+
+## Support
+
+For technical support, feature requests, or general inquiries:
+
+- **Issues**: Use the GitHub issue tracker for bug reports and feature requests
+- **Documentation**: Refer to this README and inline code documentation
+- **Community**: Participate in discussions through GitHub Discussions
+
+---
+
+**Pix Universal Image Converter** - Professional image conversion made simple.
