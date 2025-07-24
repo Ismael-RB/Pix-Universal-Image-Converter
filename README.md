@@ -39,11 +39,18 @@ $$ **Recommended for end users** $$
 
 ### Option 2: Source Installation
 
-$$ **Recommended for developers or customization** $$
+$ **Recommended for developers or customization** $
 
 **Prerequisites:**
 - Python 3.8 or higher
 - pip package manager
+
+**Dependencies:**
+```
+PyQt6>=6.5.0
+Pillow>=9.0.0
+pyinstaller>=5.0.0
+```
 
 **Installation Steps:**
 ```bash
@@ -196,9 +203,27 @@ Contributions are welcome. Please follow these guidelines:
 
 ### Development Areas
 
-$$ **High Priority**: Performance optimization, additional format support $$
-$$ **Medium Priority**: UI/UX improvements, accessibility features $$
-$$ **Low Priority**: Additional language translations, theme customization $$
+$ **High Priority**: Performance optimization, additional format support $
+$ **Medium Priority**: UI/UX improvements, accessibility features $
+$ **Low Priority**: Additional language translations, theme customization $
+
+### Development Requirements
+
+**For Source Code Editing:**
+```bash
+# Core dependencies (same as runtime)
+pip install PyQt6>=6.5.0 Pillow>=9.0.0
+
+# Development dependencies (optional but recommended)
+pip install pytest>=7.0.0          # For testing
+pip install black>=22.0.0          # Code formatting
+pip install flake8>=4.0.0          # Code linting
+```
+
+**For Building Executables:**
+```bash
+pip install pyinstaller>=5.0.0
+```
 
 ### Code Standards
 - Follow PEP 8 Python style guidelines
@@ -270,6 +295,8 @@ For technical support, feature requests, or general inquiries:
 - **Issues**: Use the GitHub issue tracker for bug reports and feature requests
 - **Documentation**: Refer to this README and inline code documentation
 - **Community**: Participate in discussions through GitHub Discussions
+
+ 
 
 ---
 
